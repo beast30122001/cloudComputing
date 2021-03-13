@@ -99,14 +99,12 @@
                 <tr>
                     <td>Name</td>
                     <td>Price</td>
-                    <td>Color</td>
                     <td>Delete</td>
                 </tr>
                 {{#each model}}
                 <tr>
                     <td><a href="edit?pid={{_id}}">{{productName}}</a></td>
                     <td>{{price}}</td>
-                    <td>{{color}}</td>
                     <td><a href="/delete?pid={{_id}}">Delete</a></td>
                 </tr>
                 {{/each}}
