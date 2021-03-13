@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Store</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+        overflow: hidden;
+        background-color: rgb(10, 151, 121);
+    }
+
+    h1 {
+        color: linen;
+        padding-left: 20px;
+    }
+    .topnav form {
+        float: right;
+        display: block;
+        color: linen;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        text-decoration-color: linen;
+    }
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: linen;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .topnav a:hover {
+        background-color: linen;
+        color: black;
+    }
+
+    .content {
+        background-color: rgb(218, 215, 210);
+        padding: 20px;
+        padding-left: 200px;
+        padding-right: 200px;
+        margin-left: 150px;
+        margin-right: 150px;
+        align-items: center;
+    }
+
+    .span {
+        margin-left: 120px;
+    }
+
+    .table td {
+        padding: 10px 10px 20px 20px;
+        text-align: center;
+    }
+
+    table,
+    td {
+        border: 1px solid black;
+        width: 70%;
+        height: 70px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+</style>
+
+<body>
+    <div class="topnav">
+        <h1>Wonder World</h1>
+        <a href="/new">New Product</a>
+        <form action="/search" method="post">
+            Prodcut's name to search <input type="text" name="txtSearch">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+
+    <div class="content">
+        <div>
+            <p>List of Product: </p>
+            <table class="table">
+                <tr>
+                    <td>Name</td>
+                    <td>Price</td>
+                    <td>Color</td>
+                    <td>Delete</td>
+                </tr>
+                {{#each model}}
+                <tr>
+                    <td><a href="edit?pid={{_id}}">{{productName}}</a></td>
+                    <td>{{price}}</td>
+                    <td>{{color}}</td>
+                    <td><a href="/delete?pid={{_id}}">Delete</a></td>
+                </tr>
+                {{/each}}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
