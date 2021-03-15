@@ -30,15 +30,18 @@ app.get('/edit', async(req,res)=>{
 app.post('/update',async (req,res)=>{
     let client= await MongoClient.connect(url);
     let dbo = client.db("alla");
+
+    console.log(req.body)
     
     let nameInput = req.body.productName;
     let priceInput = req.body.price;
     let idInput = req.body.pid;
+    let colorInput = req.body.color;
 
     var ObjectID = require('mongodb').ObjectID;
     let condition = {"_id":ObjectID(idInput)};  
 
-    let updateProduct ={$set : {productName : nameInput, price:priceInput}} ;
+    let updateProduct ={$set : {productName : nameInput, price:priceInput, color:colorInput}} ;
     await dbo.collection("pd").updateOne(condition,updateProduct);
     res.redirect('/');
 })

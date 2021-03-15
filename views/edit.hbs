@@ -13,22 +13,16 @@
         <input type="hidden" name="pid" value="{{model._id}}">
         Product Name<input type="text" name="productName" value="{{model.productName}}">
         <br>
-        Price <input type="text" name="price" value="{{model.price}}"> 
+        Price <input name="price" value="{{model.price}}"> 
         <br>
-        Color <input type="text" name="color" value="{{model.color}}">
-        <div class="container mt-3">
-        <form action="/action_page.php">
-        <select name="cars" class="custom-select mb-3">
-        <option selected>Custom Select Menu</option>
-        <option value="volvo">Volvo</option>
-        <option value="fiat">Fiat</option>
-        <option value="audi">Audi</option>
+        <select name="color">
+            <option >Custom Select Color Menu</option>
+            <option value="green">Green</option>
+            <option value="red">Red</option>
+            <option value="blue">Yellow</option>
         </select>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    </div> 
         <br>
-        <input type="submit" value="Update">
+        <button type="submit">Update</button>
     </form>
     </div>
 </body>
